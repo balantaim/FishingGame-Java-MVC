@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<resources>
+	<string name="app_name">Martin's fishing game</string>
+	<string name="welcome">Welcome to the game! Choice your destiny.</string>
+	<string name="new_fish">You have new fish: </string>
+	<string name="lose_fish">shut the door</string>
+	<string name="game_over">GAME OVER</string>
+	<string name="your_name">Enter your name with at least 3 symbols</string>
+	<string name="bye">Bye bye</string>
+	<string name="legend">
+	Every time you try to catch new fish there is 30% chance to get x2 score.
+	There is 10% chance to lose 50% of the score if you have bad luck.
+	If you drop fish there is chance to earn new attepm to catch a fish.
+	The game finish when your attemps are zero</string>
+	
+	<string name="menu">*** MENU ***
+	1. Enter number [1] Start a new game.
+	2. Enter number [2] Check the game rules.
+	3. Enter number [3] View game records.
+	4. Enter number [4] Exit.</string>
+	<string name="game_options">*** Choice you next step ***
+	1. Enter number [1] Try to get a new fish.
+	2. Enter number [2] Drop one fish.
+	3. Enter number [3] Sheck pond status.
+	4. Enter number [4] Go to main menu.</string>
+</resources>
