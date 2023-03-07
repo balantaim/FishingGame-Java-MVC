@@ -36,6 +36,6 @@ public class MessageManager {
 	}
 
 	public void gameOver() {
-		System.out.println(Colors.ANSI_RED.value() + DomParser.gameOver + Colors.ANSI_RESET.value());
+		System.out.println(Colors.ANSI_RED.value() + "\n" + DomParser.gameOver + Colors.ANSI_RESET.value());
 	}
 }

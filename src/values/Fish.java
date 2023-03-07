@@ -17,4 +17,5 @@ public enum Fish {
 	Tarpon,
 	Tuna,
 	Whale;
+	
 }

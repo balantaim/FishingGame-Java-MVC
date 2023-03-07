@@ -5,9 +5,12 @@ import java.util.Random;
 
 import values.Fish;
 
+
+
 public class Pond extends Place {
 
 	private ArrayList<String> fishList = new ArrayList<>();
+	private int score = 0;
 
 	public void getFishes() {
 		Random rn = new Random();
@@ -16,17 +19,22 @@ public class Pond extends Place {
 
 		for (int i = 0; i < number; i++) {
 			fishList.add(Fish.values()[i].toString());
+			score += (rn.nextInt(5)) * 100;
 			System.out.println(i + 1 + " " + Fish.values()[i]);
 		}
+		System.out.println("Score " + score);
+		
 	}
 
 	public boolean lostFish(String name) {
-//		Random rn = new Random();
-//		int number = rn.nextInt(14);
+		Random rn = new Random();
 
 		if (fishList.contains(name)) {
 			fishList.remove(name);
+			score = score - ((rn.nextInt(5) * 100));
+			score = score > 0 ? score:0;
 			System.out.println(name + " is removed");
+			System.out.println("Your score is: " + score);
 			return true;
 		}
 		System.out.println(name + " is not in the list");
@@ -36,7 +44,7 @@ public class Pond extends Place {
 	public String obtainFish() {
 		Random rn = new Random();
 		int number = rn.nextInt(14);
-
+		
 		return Fish.values()[number].toString();
 	}
 
@@ -55,5 +63,9 @@ public class Pond extends Place {
 			s = rich;
 		}
 		System.out.println("The pond is " + s);
+	}
+	
+	public int returnTotalScore() {
+		return score;
 	}
 }
