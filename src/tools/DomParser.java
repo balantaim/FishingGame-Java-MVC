@@ -1,11 +1,10 @@
 package tools;
 
 import java.io.IOException;
-
+import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -14,7 +13,7 @@ import org.xml.sax.SAXException;
 
 public class DomParser {
 
-	public static String appName = "", welcome = "", newFish = "", loseFish = "", gameOver = "", menu="",yourName="",bye="",legend="",gameOptions="";
+	public static HashMap<String, String> stringResource = new HashMap<>();
 
 	public synchronized void init() {
 
@@ -30,16 +29,17 @@ public class DomParser {
 					String id = stringElement.getAttribute("name");
 
 					switch (id) {
-						case "app_name" -> appName = stringElement.getTextContent();
-						case "welcome" -> welcome = stringElement.getTextContent();
-						case "new_fish" -> newFish = stringElement.getTextContent();
-						case "lose_fish" -> loseFish = stringElement.getTextContent();
-						case "game_over" -> gameOver = stringElement.getTextContent();
-						case "menu" -> menu = stringElement.getTextContent();
-						case "your_name" -> yourName = stringElement.getTextContent();
-						case "bye" -> bye = stringElement.getTextContent();
-						case "legend" -> legend = stringElement.getTextContent();
-						case "game_options" -> gameOptions = stringElement.getTextContent();
+						case "app_name" -> stringResource.put( "appName", stringElement.getTextContent());
+						case "welcome" -> stringResource.put( "welcome", stringElement.getTextContent());
+						case "new_fish" -> stringResource.put( "newFish", stringElement.getTextContent());
+						case "lose_fish" -> stringResource.put( "loseFish", stringElement.getTextContent());
+						case "game_over" -> stringResource.put( "gameOver", stringElement.getTextContent());
+						case "menu" -> stringResource.put( "menu", stringElement.getTextContent());
+						case "your_name" -> stringResource.put( "yourName", stringElement.getTextContent());
+						case "bye" -> stringResource.put( "bye", stringElement.getTextContent());
+						case "legend" -> stringResource.put( "legend", stringElement.getTextContent());
+						case "game_options" -> stringResource.put( "gameOptions", stringElement.getTextContent());
+						//case "game_options" -> gameOptions = stringElement.getTextContent();
 						
 						default -> throw new IllegalStateException("Invalid data: " + id);
 					}
@@ -53,7 +53,6 @@ public class DomParser {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 }

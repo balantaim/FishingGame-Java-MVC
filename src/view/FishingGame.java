@@ -48,7 +48,7 @@ public final class FishingGame {
 			userInput = sc.nextLine();
 			switch (userInput) {
 				case "1" -> {pond.getFishes(); count--; retryCounterGameMenu();}
-				case "2" -> {pond.lostFish("Shark"); retryCounterGameMenu();}
+				case "2" -> {pond.lostFish("Shark"); if(pond.getExtraFish()==true) count++; retryCounterGameMenu();}
 				case "3" -> {pond.showState(); retryCounterGameMenu();}
 				case "4" -> retryCounter();
 

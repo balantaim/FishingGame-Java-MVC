@@ -25,6 +25,16 @@ public class Pond extends Place {
 		System.out.println("Score " + score);
 		
 	}
+	
+	public boolean getExtraFish() {
+		Random rn = new Random();
+		final int num = rn.nextInt(2); 
+		if(num == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	public boolean lostFish(String name) {
 		Random rn = new Random();
