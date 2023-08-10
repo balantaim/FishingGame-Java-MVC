@@ -1,22 +1,30 @@
 package controller;
 
-import model.Model;
+import java.io.IOException;
+
+import data.Repository;
 import view.FishingGame;
 
 public class FishingGameController {
 	
 	private FishingGame view;
-	private Model model;
+	private static Repository repository;
 	
-
-	public FishingGameController(FishingGame view, Model model) {
+	public FishingGameController(FishingGame view) {
 		this.view = view;
-		this.model = model;
-		
+		repository = new Repository();
 	}
 	
 	public void startGame() {
 		view.initGame();
+	}
+	
+	public void makeNewRecord(String name, int score) {
+		repository.save(name, score);
+	}
+	
+	public String readTheRecords() throws IOException {
+		return repository.load();
 	}
 
 }

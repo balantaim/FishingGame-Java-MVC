@@ -8,11 +8,11 @@ import java.io.PrintWriter;
 
 public class GameSaver {
 	
-	public void CreateLog(String name, int score) {
+	public void CreateLog(String id, String name, int score) {
 		try {
-			FileWriter fw = new FileWriter("src\\model\\SaveLog.txt", true);
+			FileWriter fw = new FileWriter("src\\data\\SaveLog.txt", true);
 			PrintWriter pw = new PrintWriter(fw);
-			pw.println("\tName: " + name + " Score: " + score);
+			pw.println("\tID: " + id + ", Name: " + name + ", Score: " + score);
 			pw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -21,7 +21,7 @@ public class GameSaver {
 	
 	public String ReadLog() throws IOException {
 		String result = "";
-		BufferedReader br = new BufferedReader(new FileReader("src\\model\\SaveLog.txt"));
+		BufferedReader br = new BufferedReader(new FileReader("src\\data\\SaveLog.txt"));
 		try {
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();

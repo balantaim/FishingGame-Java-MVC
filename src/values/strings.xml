@@ -23,6 +23,6 @@
 	<string name="game_options">*** Choice you next step ***
 	1. Enter number [1] Try to get a new fish.
 	2. Enter number [2] Drop one fish.
-	3. Enter number [3] Sheck pond status.
+	3. Enter number [3] Check pond status.
 	4. Enter number [4] Go to main menu.</string>
 </resources>

@@ -2,29 +2,28 @@ package view;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.UUID;
-
+import controller.FishingGameController;
 import objects.Pond;
-import tools.GameSaver;
 
 
 public final class FishingGame {
 
 	private static MessageManager print;
 	private static Pond pond;
-	private static GameSaver logger;
 	private static int count = 6;
 	private static String userInput = "", userSelector = "", userName = "";
 	private static Scanner sc;
+	private static FishingGameController controller;
+	
+	public FishingGame() {
+		controller = new FishingGameController(this);
+	}
 
 	public void initGame() {
 		print = new MessageManager();
 		pond = new Pond();
 		sc = new Scanner(System.in);
-		logger = new GameSaver();
 
-//		String rand = UUID.randomUUID().toString();
-//		System.out.println(rand);
 		print.run();
 		primaryMenu();
 		
@@ -55,7 +54,7 @@ public final class FishingGame {
 				default -> retryCounterGameMenu();
 			}
 		}else{
-			logger.CreateLog(userName, pond.returnTotalScore());
+			controller.makeNewRecord(userName, pond.returnTotalScore());
 			print.gameOver();
 		}
 	}
@@ -67,7 +66,7 @@ public final class FishingGame {
 			case "1" -> newGame();
 			case "2" -> { print.legend(); retryCounter(); }
 			case "3" -> {
-				try {System.out.println(logger.ReadLog());
+				try {System.out.println(controller.readTheRecords());
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -90,12 +89,13 @@ public final class FishingGame {
 		if(count>0) {
 			gameOptions();
 		} else {
-			logger.CreateLog(userName, pond.returnTotalScore());
+			controller.makeNewRecord(userName, pond.returnTotalScore());
 			print.gameOver();
 		}
 	}
-	
-	
-	
+
+	public static FishingGameController getController() {
+		return controller;
+	}
 	
 }
