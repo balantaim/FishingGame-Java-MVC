@@ -1,9 +1,9 @@
-package controller;
+package com.martinatanasov.fishinggame.controller;
 
 import java.io.IOException;
 
-import data.Repository;
-import view.FishingGame;
+import com.martinatanasov.fishinggame.data.Repository;
+import com.martinatanasov.fishinggame.view.FishingGame;
 
 public class FishingGameController {
 	

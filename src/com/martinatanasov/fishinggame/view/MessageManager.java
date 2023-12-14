@@ -1,8 +1,8 @@
-package view;
+package com.martinatanasov.fishinggame.view;
 
 
-import tools.DomParser;
-import values.Colors;
+import com.martinatanasov.fishinggame.tools.DomParser;
+import com.martinatanasov.fishinggame.values.Colors;
 
 public class MessageManager {
 	

@@ -1,11 +1,10 @@
-package main;
+package com.martinatanasov.fishinggame;
+
+import com.martinatanasov.fishinggame.controller.FishingGameController;
+import com.martinatanasov.fishinggame.view.FishingGame;
 
 
-import controller.FishingGameController;
-import view.FishingGame;
-
-
-public class App {
+public class Application {
 	
 	private static FishingGame view;
 	private static FishingGameController controller;

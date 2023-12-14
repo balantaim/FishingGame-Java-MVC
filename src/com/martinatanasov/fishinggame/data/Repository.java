@@ -1,9 +1,10 @@
-package data;
+package com.martinatanasov.fishinggame.data;
 
 import java.io.IOException;
 import java.util.UUID;
 
-import tools.GameSaver;
+import com.martinatanasov.fishinggame.entity.Player;
+import com.martinatanasov.fishinggame.tools.GameSaver;
 
 public class Repository {
 	private static GameSaver logger;

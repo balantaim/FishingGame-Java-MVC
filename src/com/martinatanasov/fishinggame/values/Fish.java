@@ -1,4 +1,4 @@
-package values;
+package com.martinatanasov.fishinggame.values;
 
 
 public enum Fish {

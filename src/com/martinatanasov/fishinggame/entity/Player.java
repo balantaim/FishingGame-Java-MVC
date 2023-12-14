@@ -1,4 +1,4 @@
-package data;
+package com.martinatanasov.fishinggame.entity;
 
 public class Player {
 	

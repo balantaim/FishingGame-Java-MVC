@@ -1,4 +1,4 @@
-package tools;
+package com.martinatanasov.fishinggame.tools;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -20,7 +20,7 @@ public class DomParser {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document document = builder.parse("src\\values\\strings.xml");
+			Document document = builder.parse("src\\com\\martinatanasov\\fishinggame\\values\\strings.xml");
 			NodeList stringList = document.getElementsByTagName("string");
 			for (int i = 0; i < stringList.getLength(); i++) {
 				Node myNode = stringList.item(i);

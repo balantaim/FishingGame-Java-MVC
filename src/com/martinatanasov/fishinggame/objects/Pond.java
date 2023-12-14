@@ -1,9 +1,9 @@
-package objects;
+package com.martinatanasov.fishinggame.objects;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import values.Fish;
+import com.martinatanasov.fishinggame.values.Fish;
 
 
 
