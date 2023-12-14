@@ -1,4 +1,4 @@
-package com.martinatanasov.fishinggame.objects;
+package com.martinatanasov.fishinggame.gameboard;
 
 public abstract class Place {
 	

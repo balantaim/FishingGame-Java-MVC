@@ -1,4 +1,4 @@
-package com.martinatanasov.fishinggame.objects;
+package com.martinatanasov.fishinggame.gameboard;
 
 import java.util.ArrayList;
 import java.util.Random;

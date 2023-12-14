@@ -3,7 +3,7 @@ package com.martinatanasov.fishinggame.view;
 import java.io.IOException;
 import java.util.Scanner;
 import com.martinatanasov.fishinggame.controller.FishingGameController;
-import com.martinatanasov.fishinggame.objects.Pond;
+import com.martinatanasov.fishinggame.gameboard.Pond;
 
 
 public final class FishingGame {
