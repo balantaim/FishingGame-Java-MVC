@@ -13,6 +13,8 @@ import org.xml.sax.SAXException;
 
 public class DomParser {
 
+	private final static String VALUES_DIRECTORY = "src/com/martinatanasov/fishinggame/values/";
+	private final static String VALUES_FILE = VALUES_DIRECTORY + "strings.xml";
 	public static HashMap<String, String> stringResource = new HashMap<>();
 
 	public synchronized void init() {
@@ -20,7 +22,7 @@ public class DomParser {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document document = builder.parse("src\\com\\martinatanasov\\fishinggame\\values\\strings.xml");
+			Document document = builder.parse(VALUES_FILE);
 			NodeList stringList = document.getElementsByTagName("string");
 			for (int i = 0; i < stringList.getLength(); i++) {
 				Node myNode = stringList.item(i);

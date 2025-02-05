@@ -8,9 +8,12 @@ import java.io.PrintWriter;
 
 public class GameSaver {
 	
+	private final static String LOG_DIRECTORY = "src/com/martinatanasov/fishinggame/data/";
+	private final static String LOG_FILE = LOG_DIRECTORY + "SaveLog.txt";
+	
 	public void CreateLog(String id, String name, int score) {
 		try {
-			FileWriter fw = new FileWriter("src\\com\\martinatanasov\\fishinggame\\data\\SaveLog.txt", true);
+			FileWriter fw = new FileWriter(LOG_FILE, true);
 			PrintWriter pw = new PrintWriter(fw);
 			pw.println("\tID: " + id + ", Name: " + name + ", Score: " + score);
 			pw.close();
@@ -21,7 +24,7 @@ public class GameSaver {
 	
 	public String ReadLog() throws IOException {
 		String result = "";
-		BufferedReader br = new BufferedReader(new FileReader("src\\com\\martinatanasov\\fishinggame\\data\\SaveLog.txt"));
+		BufferedReader br = new BufferedReader(new FileReader(LOG_FILE));
 		try {
 		    StringBuilder sb = new StringBuilder();
 		    String line = br.readLine();
